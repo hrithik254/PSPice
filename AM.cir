@@ -1,0 +1,23 @@
+* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Apr 01 08:21:37 2021
+
+
+
+** Analysis setup **
+.tran 0ns 1ms 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "AM.net"
+.INC "AM.als"
+
+
+.probe
+
+
+.END

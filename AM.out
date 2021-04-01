@@ -1,0 +1,237 @@
+
+**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Apr 01 08:21:37 2021
+
+
+
+** Analysis setup **
+.tran 0ns 1ms 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "AM.net"
+
+**** INCLUDING AM.net ****
+* Schematics Netlist *
+
+
+
+R_R2         0 $N_0001  8.2k  
+C_C1         $N_0001 vc  1n  
+R_RL         0 vam  820k  
+R_RE         0 $N_0002  1k  
+R_R1         $N_0001 $N_0003  8.2k  
+V_Vcc         $N_0003 0 12V
+L_LP         $N_0004 $N_0002  470u  
+C_C3         $N_0004 va  100n  
+C_C         $N_0005 $N_0003  20n  
+Q_Q1         $N_0005 $N_0001 $N_0002 Q2N2222
+L_L         $N_0005 $N_0003  470u  
+C_C2         vam $N_0005  10n  
+V_VC         vc 0  
++SIN 0 15v 50k 0 0 0
+V_Vm         va 0  
++SIN 0 15v 5k 0 0 0
+
+**** RESUMING AM.cir ****
+.INC "AM.als"
+
+
+
+**** INCLUDING AM.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R2            R2(1=0 2=$N_0001 )
+C_C1            C1(1=$N_0001 2=vc )
+R_RL            RL(1=0 2=vam )
+R_RE            RE(1=0 2=$N_0002 )
+R_R1            R1(1=$N_0001 2=$N_0003 )
+V_Vcc           Vcc(+=$N_0003 -=0 )
+L_LP            LP(1=$N_0004 2=$N_0002 )
+C_C3            C3(1=$N_0004 2=va )
+C_C             C(1=$N_0005 2=$N_0003 )
+Q_Q1            Q1(c=$N_0005 b=$N_0001 e=$N_0002 )
+L_L             L(1=$N_0005 2=$N_0003 )
+C_C2            C2(1=vam 2=$N_0005 )
+V_VC            VC(+=vc -=0 )
+V_Vm            Vm(+=va -=0 )
+_    _(vc=vc)
+_    _(vam=vam)
+_    _(va=va)
+.ENDALIASES
+
+
+**** RESUMING AM.cir ****
+.probe
+
+
+.END
+
+**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         
+               NPN             
+          IS   14.340000E-15 
+          BF  255.9          
+          NF    1            
+         VAF   74.03         
+         IKF     .2847       
+         ISE   14.340000E-15 
+          NE    1.307        
+          BR    6.092        
+          NR    1            
+          RB   10            
+          RC    1            
+         CJE   22.010000E-12 
+         MJE     .377        
+         CJC    7.306000E-12 
+         MJC     .3416       
+          TF  411.100000E-12 
+         XTF    3            
+         VTF    1.7          
+         ITF     .6          
+          TR   46.910000E-09 
+         XTB    1.5          
+          CN    2.42         
+           D     .87         
+
+
+**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   va)    0.0000  (   vc)    0.0000  (  vam)    0.0000  ($N_0001)    5.8833    
+
+($N_0002)    5.1963                   ($N_0003)   12.0000                       
+
+($N_0004)    5.1963                   ($N_0005)   12.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vcc       -5.914E-03
+    V_VC         0.000E+00
+    V_Vm         0.000E+00
+
+    TOTAL POWER DISSIPATION   7.10E-02  WATTS
+
+
+**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1      
+MODEL        Q2N2222   
+IB           2.85E-05 
+IC           5.17E-03 
+VBE          6.87E-01 
+VBC         -6.12E+00 
+VCE          6.80E+00 
+BETADC       1.82E+02 
+GM           1.97E-01 
+RPI          9.86E+02 
+RX           1.00E+01 
+RO           1.55E+04 
+CBE          1.18E-10 
+CBC          3.43E-12 
+CJS          0.00E+00 
+BETAAC       1.94E+02 
+CBX/CBX2     0.00E+00 
+FT/FT2       2.57E+08 
+
+
+**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   va)    0.0000  (   vc)    0.0000  (  vam)    0.0000  ($N_0001)    5.8833    
+
+($N_0002)    5.1963                   ($N_0003)   12.0000                       
+
+($N_0004)    5.1963                   ($N_0005)   12.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vcc       -5.914E-03
+    V_VC         0.000E+00
+    V_Vm         0.000E+00
+
+    TOTAL POWER DISSIPATION   7.10E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .09
+
