@@ -1,0 +1,232 @@
+
+**** 04/04/21 23:05:16 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Apr 04 23:05:12 2021
+
+
+
+** Analysis setup **
+.tran 0ns 1ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "AM1.net"
+
+**** INCLUDING AM1.net ****
+* Schematics Netlist *
+
+
+
+R_Rm         IN OUT  1k  
+V_Vo         $N_0001 0 2V
+D_D5         $N_0002 OUT D1N4002 
+D_D6         $N_0002 0 D1N4002 
+D_D7         OUT $N_0003 D1N4002 
+D_D8         0 $N_0003 D1N4002 
+R_R3         OUT VoutAM  1k  
+C_C1         0 VoutAM  2.2n  
+L_L1         VoutAM 0  46uH  
+D_D11         VoutOpAmp VoutDEM D1N4148 
+R_R9         0 VoutDEM  300k  
+R_R7         0 $N_0004  1k  
+E_U3         VoutOpAmp 0 VALUE {LIMIT(V(VoutAM,$N_0004)*1E6,-15V,+15V)}
+C_C4         0 VoutDEM  200p  
+V_Vm         IN $N_0001  
++SIN 0 1 5k 0 0 0
+R_R5         $N_0004 VoutOpAmp  0.5k  
+R_Rp         $N_0002 $N_0005  1k  
+V_Vp         $N_0005 $N_0003  
++SIN 0 10 50k 0 0 0
+
+**** RESUMING AM1.cir ****
+.INC "AM1.als"
+
+
+
+**** INCLUDING AM1.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_Rm            Rm(1=IN 2=OUT )
+V_Vo            Vo(+=$N_0001 -=0 )
+D_D5            D5(1=$N_0002 2=OUT )
+D_D6            D6(1=$N_0002 2=0 )
+D_D7            D7(1=OUT 2=$N_0003 )
+D_D8            D8(1=0 2=$N_0003 )
+R_R3            R3(1=OUT 2=VoutAM )
+C_C1            C1(1=0 2=VoutAM )
+L_L1            L1(1=VoutAM 2=0 )
+D_D11           D11(1=VoutOpAmp 2=VoutDEM )
+R_R9            R9(1=0 2=VoutDEM )
+R_R7            R7(1=0 2=$N_0004 )
+E_U3            U3(OUT=VoutOpAmp +=VoutAM -=$N_0004 )
+C_C4            C4(1=0 2=VoutDEM )
+V_Vm            Vm(+=IN -=$N_0001 )
+R_R5            R5(1=$N_0004 2=VoutOpAmp )
+R_Rp            Rp(1=$N_0002 2=$N_0005 )
+V_Vp            Vp(+=$N_0005 -=$N_0003 )
+_    _(OUT=OUT)
+_    _(IN=IN)
+_    _(VoutAM=VoutAM)
+_    _(VoutOpAmp=VoutOpAmp)
+_    _(VoutDEM=VoutDEM)
+.ENDALIASES
+
+
+**** RESUMING AM1.cir ****
+.probe
+
+
+.END
+
+**** 04/04/21 23:05:16 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM1.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         D1N4148         
+          IS   14.110000E-09    2.682000E-09 
+           N    1.984           1.836        
+         ISR  100.000000E-12    1.565000E-09 
+         IKF   94.81             .04417      
+          BV  100.1           100            
+         IBV   10             100.000000E-06 
+          RS     .03389          .5664       
+          TT    4.761000E-06   11.540000E-09 
+         CJO   51.170000E-12    4.000000E-12 
+          VJ     .3905           .5          
+           M     .2762           .3333       
+
+
+**** 04/04/21 23:05:16 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    2.0000  (  OUT)     .9612  (VoutAM)    0.0000 ($N_0001)    2.0000    
+
+($N_0002)     .4418                   ($N_0003)     .5194                       
+
+($N_0004)    0.0000                   ($N_0005)     .5194                       
+
+(VoutDEM)-36.57E-15                   (VoutOpAmp)    0.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vo        -1.039E-03
+    V_Vm        -1.039E-03
+    V_Vp        -7.762E-05
+
+    TOTAL POWER DISSIPATION   2.08E-03  WATTS
+
+
+**** 04/04/21 23:05:16 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E_U3      
+V-SOURCE     0.000E+00
+I-SOURCE     1.219E-19
+
+
+**** DIODES
+
+
+NAME         D_D5        D_D6        D_D7        D_D8        D_D11     
+MODEL        D1N4002     D1N4002     D1N4002     D1N4002     D1N4148   
+ID          -1.42E-08    7.76E-05    7.76E-05   -1.42E-08    3.17E-21 
+VD          -5.19E-01    4.42E-01    4.42E-01   -5.19E-01    3.66E-14 
+REQ          6.68E+10    6.60E+02    6.60E+02    6.68E+10    1.15E+07 
+CAP          4.05E-11    7.29E-09    7.29E-09    4.05E-11    4.00E-12 
+**** 04/04/21 23:05:16 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    2.0000  (  OUT)     .9612  (VoutAM)    0.0000 ($N_0001)    2.0000    
+
+($N_0002)     .4418                   ($N_0003)     .5194                       
+
+($N_0004)    0.0000                   ($N_0005)     .5194                       
+
+(VoutDEM)-36.57E-15                   (VoutOpAmp)    0.0000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vo        -1.039E-03
+    V_Vm        -1.039E-03
+    V_Vp        -7.762E-05
+
+    TOTAL POWER DISSIPATION   2.08E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .30
+

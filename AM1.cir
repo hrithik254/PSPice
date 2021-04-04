@@ -1,20 +1,20 @@
-* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
+* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM1.sch
 
 * Schematics Version 9.1 - Web Update 1
-* Thu Apr 01 11:56:02 2021
+* Sun Apr 04 23:05:12 2021
 
 
 
 ** Analysis setup **
-.tran 0ns 1ms 0 1u
+.tran 0ns 1ms
 .OP 
 
 
 * From [PSPICE NETLIST] section of pspiceev.ini:
 .lib "nom.lib"
 
-.INC "AM.net"
-.INC "AM.als"
+.INC "AM1.net"
+.INC "AM1.als"
 
 
 .probe
