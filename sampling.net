@@ -1,0 +1,17 @@
+* Schematics Netlist *
+
+
+
+R_R1         0 $N_0001  1k  
+X_U5A         $N_0002 --out--- +Vcc -Vcc --out--- LM324
+V_Va         +Vcc 0 15V
+V_Vb         -Vcc 0 -15V
+Q_Q1         $N_0002 $N_0003 0 Q2N2222
+R_R2         $N_0001 $N_0002  1k  
+X_U4A         ---in--- $N_0001 +Vcc -Vcc $N_0002 LM324
+R_R3         0 --out---  1k  
+V_Vin         ---in--- 0  
++SIN 4 2 100 0 0 0
+V_Vck         pulse 0  
++PULSE 0 5 0 1u 1u 0.92m 2m
+R_R4         pulse $N_0003  1k  

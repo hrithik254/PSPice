@@ -1,0 +1,16 @@
+* Schematics Netlist *
+
+
+
+C_C2         0 Vcc  0.1uF  
+C_C1         0 $N_0001  0.1uF  
+R_R1         $N_0001 Vcc  4.3k  
+C_C4         0 Vcc  10uF  
+V_V2         Vcc 0 7V
+X_X1         0 $N_0002 **OUT** Vcc $N_0003 $N_0001 $N_0001 Vcc 555D PARAMS:
++  MAXFREQ=3E6
+R_RL         **OUT** 0  1k  
+V_**message**         $N_0003 0  AC 0
++SIN 3 3 50 0 0 0
+V_clock         $N_0002 0  
++PULSE 7 0 0 0.1u 0.1u 0.1m 1m

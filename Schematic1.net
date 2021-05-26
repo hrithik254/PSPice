@@ -1,0 +1,10 @@
+* Schematics Netlist *
+
+
+
+D_D1         $N_0001 Vam D1N4002 
+R_R1         0 Vam  1k  
+V_Vm         $N_0002 0  
++SIN 0 10 1k 0 0 0
+V_Vc         $N_0001 $N_0002  
++SIN 0 10 50k 0 0 0

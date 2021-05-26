@@ -1,0 +1,224 @@
+
+**** 05/22/21 18:36:17 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\DSBSC.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 22 18:36:17 2021
+
+
+
+** Analysis setup **
+.tran 0ns 1.5ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "DSBSC.net"
+
+**** INCLUDING DSBSC.net ****
+* Schematics Netlist *
+
+
+
+R_R7         $N_0002 $N_0001  10  
+R_R2         $N_0003 A1+  1  
+D_D10         $N_0001 $N_0004 D1N914 
+D_D14         K $N_0001 D1N914 
+V_Vm         $N_0003 0  
++SIN 0 1 1K 0 0 0
+L_L1         A1+ 0  5mH  
+L_L3A         K 0  5mH  
+L_L3B         0 $N_0004  5mH  
+R_R5         A2+ A  10  
+D_D9         A K D1N914 
+D_D15         $N_0004 A D1N914 
+L_L2B         $N_0005 $N_0002  5mH  
+L_L2A         A2+ $N_0005  5mH  
+V_Vp         $N_0005 0  
++SIN 0 10 50K 0 0 0
+L_L4         DSB 0  5mH  
+R_R10         0 DSB  1K  
+Kn_K1         L_L1 L_L2A 
++ L_L2B    1
+Kn_K2         L_L3A L_L3B 
++ L_L4    1
+
+**** RESUMING DSBSC.cir ****
+.INC "DSBSC.als"
+
+
+
+**** INCLUDING DSBSC.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R7            R7(1=$N_0002 2=$N_0001 )
+R_R2            R2(1=$N_0003 2=A1+ )
+D_D10           D10(1=$N_0001 2=$N_0004 )
+D_D14           D14(1=K 2=$N_0001 )
+V_Vm            Vm(+=$N_0003 -=0 )
+L_L1            L1(1=A1+ 2=0 )
+L_L3A           L3A(1=K 2=0 )
+L_L3B           L3B(1=0 2=$N_0004 )
+R_R5            R5(1=A2+ 2=A )
+D_D9            D9(1=A 2=K )
+D_D15           D15(1=$N_0004 2=A )
+L_L2B           L2B(1=$N_0005 2=$N_0002 )
+L_L2A           L2A(1=A2+ 2=$N_0005 )
+V_Vp            Vp(+=$N_0005 -=0 )
+L_L4            L4(1=DSB 2=0 )
+R_R10           R10(1=0 2=DSB )
+Kn_K1            K1()
+Kn_K2            K2()
+_    _(A1+=A1+)
+_    _(K=K)
+_    _(A=A)
+_    _(A2+=A2+)
+_    _(DSB=DSB)
+_    _(A1-=0)
+_    _(A4-=0)
+.ENDALIASES
+
+
+**** RESUMING DSBSC.cir ****
+.probe
+
+
+.END
+
+**** 05/22/21 18:36:17 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\DSBSC.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N914          
+          IS  168.100000E-21 
+         ISR  100.000000E-12 
+          BV  100            
+         IBV  100.000000E-06 
+          RS     .1          
+          TT   11.540000E-09 
+         CJO    4.000000E-12 
+          VJ     .75         
+           M     .3333       
+
+
+**** 05/22/21 18:36:17 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\DSBSC.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    A)    0.0000  (    K)    0.0000  (  A1+)    0.0000  (  A2+)    0.0000      
+
+(  DSB)    0.0000  ($N_0001)    0.0000                   ($N_0002)    0.0000    
+
+($N_0003)    0.0000                   ($N_0004)    0.0000                       
+
+($N_0005)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vm         0.000E+00
+    V_Vp         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/22/21 18:36:17 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\DSBSC.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D10       D_D14       D_D9        D_D15     
+MODEL        D1N914      D1N914      D1N914      D1N914    
+ID           0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+VD           0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+REQ          5.17E+08    5.17E+08    5.17E+08    5.17E+08 
+CAP          4.00E-12    4.00E-12    4.00E-12    4.00E-12 
+**** 05/22/21 18:36:17 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\DSBSC.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    A)    0.0000  (    K)    0.0000  (  A1+)    0.0000  (  A2+)    0.0000      
+
+(  DSB)    0.0000  ($N_0001)    0.0000                   ($N_0002)    0.0000    
+
+($N_0003)    0.0000                   ($N_0004)    0.0000                       
+
+($N_0005)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vm         0.000E+00
+    V_Vp         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .20
+

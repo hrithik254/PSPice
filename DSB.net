@@ -1,0 +1,25 @@
+* Schematics Netlist *
+
+
+
+L_L6         $N_0001 0  5mH  
+L_L5         0 $N_0002  5mH  
+D_D1         $N_0003 $N_0001 D1N914 
+D_D2         $N_0004 $N_0002 D1N914 
+D_D3         $N_0002 $N_0003 D1N914 
+D_D4         $N_0001 $N_0004 D1N914 
+L_L7         0 OUT_DSB  5mH  
+Kn_K1         L_L1 L_L2 
++ L_L3    1
+Kn_K2         L_L5 L_L6 
++ L_L7    1
+L_L3         $N_0005 $N_0003  5mH  
+L_L2         $N_0004 $N_0005  5mH  
+R_R3         OUT_DSB 0  10  
+V_Carrier         $N_0005 0  
++SIN 0 10 50k 0 0 0
+L_L1         $N_0006 0  5mH  
+R_R2         Baseband $N_0006  10  
+V_V3         Baseband $N_0007 1V
+V_Baseband         $N_0007 0 DC 0 
++SIN 0 1 1k 0 0 0

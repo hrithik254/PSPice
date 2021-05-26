@@ -1,0 +1,22 @@
+* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\Schematic1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 22 21:46:12 2021
+
+
+
+** Analysis setup **
+.tran 0ns 1000ns
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic1.net"
+.INC "Schematic1.als"
+
+
+.probe
+
+
+.END

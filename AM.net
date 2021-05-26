@@ -2,22 +2,19 @@
 
 
 
-R_R2         0 $N_0001  8.2k
-C_C1         $N_0001 vc  1n
-R_RL         0 vam  820k
-R_RE         0 $N_0002  1k
-R_R1         $N_0001 $N_0003  8.2k
+R_R2         0 $N_0001  8.2k  
+C_C1         $N_0001 vc  1n  
+R_RL         0 vam  820k  
+R_RE         0 $N_0002  1k  
+R_R1         $N_0001 $N_0003  8.2k  
 V_Vcc         $N_0003 0 12V
-L_LP         $N_0004 $N_0002  470u
-C_C3         $N_0004 va  100n
-C_C         $N_0005 $N_0003  20n
-Q_Q1         $N_0005 $N_0001 $N_0002 0 2N2222
-L_L         $N_0005 $N_0003  470u
-C_C2         vam $N_0005  10n
-V_VC         vc 0
-+SIN 0 15v 50k 0 0 0
-V_Vm         va 0
-+SIN 0 15v 5k 0 0 0
-*.model NPN NPN
-.lib C:\Users\anjan\OneDrive\Documents\LTspiceXVII\lib\cmp\standard.bjt
-.op
+L_LP         $N_0004 $N_0002  470u  
+C_C3         $N_0004 va  100n  
+C_C         $N_0005 $N_0003  20n  
+Q_Q1         $N_0005 $N_0001 $N_0002 Q2N2222
+L_L         $N_0005 $N_0003  470u  
+C_C2         vam $N_0005  10n  
+V_VC         vc 0  
++SIN 0 10v 50k 0 0 0
+V_Vm         va 0  
++SIN 0 10v 1k 0 0 0

@@ -1,0 +1,23 @@
+* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\DSBSC.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 22 18:36:17 2021
+
+
+
+** Analysis setup **
+.tran 0ns 1.5ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "DSBSC.net"
+.INC "DSBSC.als"
+
+
+.probe
+
+
+.END

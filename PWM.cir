@@ -1,20 +1,20 @@
-* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM1.sch
+* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\PWM.sch
 
 * Schematics Version 9.1 - Web Update 1
-* Sat May 22 20:28:35 2021
+* Sat May 22 23:00:11 2021
 
 
 
 ** Analysis setup **
-.tran 0ns 1ms
+.tran 0ns 20ms
 .OP 
 
 
 * From [PSPICE NETLIST] section of pspiceev.ini:
 .lib "nom.lib"
 
-.INC "AM1.net"
-.INC "AM1.als"
+.INC "PWM.net"
+.INC "PWM.als"
 
 
 .probe

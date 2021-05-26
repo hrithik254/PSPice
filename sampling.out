@@ -1,0 +1,385 @@
+
+**** 05/22/21 22:56:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\sampling.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 22 22:56:50 2021
+
+
+
+** Analysis setup **
+.tran 0ns 10ms 0 0.01ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "sampling.net"
+
+**** INCLUDING sampling.net ****
+* Schematics Netlist *
+
+
+
+R_R1         0 $N_0001  1k  
+X_U5A         $N_0002 --out--- +Vcc -Vcc --out--- LM324
+V_Va         +Vcc 0 15V
+V_Vb         -Vcc 0 -15V
+Q_Q1         $N_0002 $N_0003 0 Q2N2222
+R_R2         $N_0001 $N_0002  1k  
+X_U4A         ---in--- $N_0001 +Vcc -Vcc $N_0002 LM324
+R_R3         0 --out---  1k  
+V_Vin         ---in--- 0  
++SIN 4 2 100 0 0 0
+V_Vck         pulse 0  
++PULSE 0 5 0 1u 1u 0.92m 2m
+R_R4         pulse $N_0003  1k  
+
+**** RESUMING sampling.cir ****
+.INC "sampling.als"
+
+
+
+**** INCLUDING sampling.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=0 2=$N_0001 )
+X_U5A           U5A(+=$N_0002 -=--out--- V+=+Vcc V-=-Vcc OUT=--out--- )
+V_Va            Va(+=+Vcc -=0 )
+V_Vb            Vb(+=-Vcc -=0 )
+Q_Q1            Q1(c=$N_0002 b=$N_0003 e=0 )
+R_R2            R2(1=$N_0001 2=$N_0002 )
+X_U4A           U4A(+=---in--- -=$N_0001 V+=+Vcc V-=-Vcc OUT=$N_0002 )
+R_R3            R3(1=0 2=--out--- )
+V_Vin           Vin(+=---in--- -=0 )
+V_Vck           Vck(+=pulse -=0 )
+R_R4            R4(1=pulse 2=$N_0003 )
+_    _(--out---=--out---)
+_    _(---in---=---in---)
+_    _(+Vcc=+Vcc)
+_    _(-Vcc=-Vcc)
+_    _(pulse=pulse)
+.ENDALIASES
+
+
+**** RESUMING sampling.cir ****
+.probe
+
+
+.END
+
+**** 05/22/21 22:56:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\sampling.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U5A.dx        X_U4A.dx        
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1            
+
+
+**** 05/22/21 22:56:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\sampling.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         X_U5A.qx        X_U4A.qx        
+               NPN             PNP             PNP             
+          IS   14.340000E-15  800.000000E-18  800.000000E-18 
+          BF  255.9           166.7           166.7          
+          NF    1               1               1            
+         VAF   74.03                                         
+         IKF     .2847                                       
+         ISE   14.340000E-15                                 
+          NE    1.307                                        
+          BR    6.092           1               1            
+          NR    1               1               1            
+          RB   10                                            
+          RC    1                                            
+         CJE   22.010000E-12                                 
+         MJE     .377                                        
+         CJC    7.306000E-12                                 
+         MJC     .3416                                       
+          TF  411.100000E-12                                 
+         XTF    3                                            
+         VTF    1.7                                          
+         ITF     .6                                          
+          TR   46.910000E-09                                 
+         XTB    1.5                                          
+          CN    2.42            2.2             2.2          
+           D     .87             .52             .52         
+
+
+**** 05/22/21 22:56:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\sampling.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( +Vcc)   15.0000  ( -Vcc)  -15.0000  (pulse)    0.0000  ($N_0001)    3.9984    
+
+($N_0002)    7.9968                   ($N_0003) 1.315E-09                       
+
+(X_U4A.6)    -.0015                   (X_U4A.7)    8.0990                       
+
+(X_U4A.8)    8.0990                   (X_U4A.9)    0.0000                       
+
+(X_U5A.6)    -.0016                   (X_U5A.7)    8.2959                       
+
+(X_U5A.8)    8.2959                   (X_U5A.9)    0.0000                       
+
+(---in---)    4.0000                  (--out---)    7.9939                      
+
+(X_U4A.10)    4.6061                  (X_U4A.11)  -14.9600                      
+
+(X_U4A.12)  -14.9620                  (X_U4A.13)    4.5922                      
+
+(X_U4A.14)    4.5928                  (X_U4A.53)   13.5000                      
+
+(X_U4A.54)  -14.3500                  (X_U4A.90)    2.0443                      
+
+(X_U4A.91)   40.0000                  (X_U4A.92)  -40.0000                      
+
+(X_U4A.99)    0.0000                  (X_U5A.10)    8.6014                      
+
+(X_U5A.11)  -14.9610                  (X_U5A.12)  -14.9630                      
+
+(X_U5A.13)    8.5876                  (X_U5A.14)    8.5886                      
+
+(X_U5A.53)   13.5000                  (X_U5A.54)  -14.3500                      
+
+(X_U5A.90)    6.0398                  (X_U5A.91)   40.0000                      
+
+(X_U5A.92)  -40.0000                  (X_U5A.99)    0.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Va        -6.637E-03
+    V_Vb         6.635E-03
+    V_Vin        4.307E-08
+    V_Vck        1.315E-12
+    X_U5A.vb    -1.595E-08
+    X_U5A.vc     5.505E-12
+    X_U5A.ve     2.234E-11
+    X_U5A.vlim   6.040E-03
+    X_U5A.vlp   -3.396E-11
+    X_U5A.vln   -4.604E-11
+    X_U4A.vb    -1.538E-08
+    X_U4A.vc     5.503E-12
+    X_U4A.ve     2.235E-11
+    X_U4A.vlim   2.044E-03
+    X_U4A.vlp   -3.796E-11
+    X_U4A.vln   -4.205E-11
+
+    TOTAL POWER DISSIPATION   1.99E-01  WATTS
+
+
+**** 05/22/21 22:56:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\sampling.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U5A.ga    X_U5A.gcm   X_U4A.ga    X_U4A.gcm 
+I-SOURCE     5.287E-07   5.127E-07   2.900E-07   2.746E-07
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U5A.egnd  X_U4A.egnd
+V-SOURCE     0.000E+00   0.000E+00
+I-SOURCE    -6.039E-03  -2.044E-03
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U5A.fb    X_U4A.fb  
+I-SOURCE    -3.377E-01  -3.258E-01
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U5A.hlim  X_U4A.hlim
+V-SOURCE     6.040E+00   2.044E+00
+I-SOURCE    -1.208E-11  -4.089E-12
+
+
+**** DIODES
+
+
+NAME         X_U5A.dc    X_U5A.de    X_U5A.dlp   X_U5A.dln   X_U5A.dp  
+MODEL        X_U5A.dx    X_U5A.dx    X_U5A.dx    X_U5A.dx    X_U5A.dx  
+ID          -5.51E-12   -2.23E-11   -3.40E-11   -4.60E-11   -3.00E-11 
+VD          -5.51E+00   -2.23E+01   -3.40E+01   -4.60E+01   -3.00E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U4A.dc    X_U4A.de    X_U4A.dlp   X_U4A.dln   X_U4A.dp  
+MODEL        X_U4A.dx    X_U4A.dx    X_U4A.dx    X_U4A.dx    X_U4A.dx  
+ID          -5.50E-12   -2.23E-11   -3.80E-11   -4.20E-11   -3.00E-11 
+VD          -5.50E+00   -2.23E+01   -3.80E+01   -4.20E+01   -3.00E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1        X_U5A.q1    X_U5A.q2    X_U4A.q1    X_U4A.q2  
+MODEL        Q2N2222     X_U5A.qx    X_U5A.qx    X_U4A.qx    X_U4A.qx  
+IB          -1.32E-12   -4.46E-08   -4.14E-08   -4.48E-08   -4.31E-08 
+IC           1.02E-11   -7.44E-06   -6.91E-06   -7.47E-06   -7.18E-06 
+VBE          1.32E-09   -5.94E-01   -5.92E-01   -5.94E-01   -5.93E-01 
+VBC         -8.00E+00    2.30E+01    2.30E+01    1.90E+01    1.90E+01 
+VCE          8.00E+00   -2.35E+01   -2.36E+01   -1.96E+01   -1.96E+01 
+BETADC      -7.75E+00    1.67E+02    1.67E+02    1.67E+02    1.67E+02 
+GM           5.06E-13    2.88E-04    2.67E-04    2.89E-04    2.78E-04 
+RPI          2.32E+12    5.79E+05    6.24E+05    5.77E+05    6.00E+05 
+RX           1.00E+01    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+RO           8.22E+11    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CBE          2.20E-11    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBC          3.16E-12    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+BETAAC       1.18E+00    1.67E+02    1.67E+02    1.67E+02    1.67E+02 
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+FT/FT2       3.20E-03    4.58E+15    4.25E+15    4.60E+15    4.42E+15 
+
+
+**** 05/22/21 22:56:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\sampling.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( +Vcc)   15.0000  ( -Vcc)  -15.0000  (pulse)    0.0000  ($N_0001)    3.9984    
+
+($N_0002)    7.9968                   ($N_0003) 1.315E-09                       
+
+(X_U4A.6)    -.0016                   (X_U4A.7)    8.1967                       
+
+(X_U4A.8)    8.1967                   (X_U4A.9)    0.0000                       
+
+(X_U5A.6)    -.0016                   (X_U5A.7)    8.3936                       
+
+(X_U5A.8)    8.3936                   (X_U5A.9)    0.0000                       
+
+(---in---)    4.0000                  (--out---)    7.9939                      
+
+(X_U4A.10)    4.6061                  (X_U4A.11)  -14.9600                      
+
+(X_U4A.12)  -14.9620                  (X_U4A.13)    4.5922                      
+
+(X_U4A.14)    4.5928                  (X_U4A.53)   13.5000                      
+
+(X_U4A.54)  -14.3500                  (X_U4A.90)    3.9984                      
+
+(X_U4A.91)   40.0000                  (X_U4A.92)  -40.0000                      
+
+(X_U4A.99)    0.0000                  (X_U5A.10)    8.6014                      
+
+(X_U5A.11)  -14.9610                  (X_U5A.12)  -14.9630                      
+
+(X_U5A.13)    8.5876                  (X_U5A.14)    8.5886                      
+
+(X_U5A.53)   13.5000                  (X_U5A.54)  -14.3500                      
+
+(X_U5A.90)    7.9939                  (X_U5A.91)   40.0000                      
+
+(X_U5A.92)  -40.0000                  (X_U5A.99)    0.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Va        -6.637E-03
+    V_Vb         6.635E-03
+    V_Vin        4.307E-08
+    V_Vck        1.315E-12
+    X_U5A.vb    -1.623E-08
+    X_U5A.vc     5.507E-12
+    X_U5A.ve     2.234E-11
+    X_U5A.vlim   7.994E-03
+    X_U5A.vlp   -3.201E-11
+    X_U5A.vln   -4.800E-11
+    X_U4A.vb    -1.566E-08
+    X_U4A.vc     5.504E-12
+    X_U4A.ve     2.235E-11
+    X_U4A.vlim   3.998E-03
+    X_U4A.vlp   -3.600E-11
+    X_U4A.vln   -4.400E-11
+
+    TOTAL POWER DISSIPATION   1.99E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .13
+

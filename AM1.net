@@ -11,14 +11,8 @@ D_D8         0 $N_0003 D1N4002
 R_R3         OUT VoutAM  1k  
 C_C1         0 VoutAM  2.2n  
 L_L1         VoutAM 0  46uH  
-D_D11         VoutOpAmp VoutDEM D1N4148 
-R_R9         0 VoutDEM  300k  
-R_R7         0 $N_0004  1k  
-E_U3         VoutOpAmp 0 VALUE {LIMIT(V(VoutAM,$N_0004)*1E6,-15V,+15V)}
-C_C4         0 VoutDEM  200p  
 V_Vm         IN $N_0001  
 +SIN 0 1 5k 0 0 0
-R_R5         $N_0004 VoutOpAmp  0.5k  
-R_Rp         $N_0002 $N_0005  1k  
-V_Vp         $N_0005 $N_0003  
+R_Rp         $N_0002 $N_0004  1k  
+V_Vp         $N_0004 $N_0003  
 +SIN 0 10 50k 0 0 0

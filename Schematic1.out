@@ -1,0 +1,124 @@
+
+**** 05/22/21 21:46:15 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\Schematic1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 22 21:46:12 2021
+
+
+
+** Analysis setup **
+.tran 0ns 1000ns
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic1.net"
+
+**** INCLUDING Schematic1.net ****
+* Schematics Netlist *
+
+
+
+D_D1         $N_0001 Vam D1N4002 
+R_R1         0 Vam  1k  
+V_Vm         $N_0002 0  
++SIN 0 10 1k 0 0 0
+V_Vc         $N_0001 $N_0002  
++SIN 0 10 50k 0 0 0
+
+**** RESUMING Schematic1.cir ****
+.INC "Schematic1.als"
+
+
+
+**** INCLUDING Schematic1.als ****
+* Schematics Aliases *
+
+.ALIASES
+D_D1            D1(1=$N_0001 2=Vam )
+R_R1            R1(1=0 2=Vam )
+V_Vm            Vm(+=$N_0002 -=0 )
+V_Vc            Vc(+=$N_0001 -=$N_0002 )
+_    _(Vam=Vam)
+.ENDALIASES
+
+
+**** RESUMING Schematic1.cir ****
+.probe
+
+
+.END
+
+**** 05/22/21 21:46:15 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\Schematic1.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 05/22/21 21:46:15 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\Schematic1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  Vam)-30.71E-21  ($N_0001)    0.0000                   ($N_0002)    0.0000    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vm         3.071E-23
+    V_Vc         3.071E-23
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

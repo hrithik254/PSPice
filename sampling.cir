@@ -1,0 +1,23 @@
+* C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\sampling.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 22 22:56:50 2021
+
+
+
+** Analysis setup **
+.tran 0ns 10ms 0 0.01ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "sampling.net"
+.INC "sampling.als"
+
+
+.probe
+
+
+.END

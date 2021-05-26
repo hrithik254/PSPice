@@ -1,5 +1,5 @@
 
-**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+**** 05/22/21 20:21:41 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
 
@@ -13,7 +13,7 @@
 
 
 * Schematics Version 9.1 - Web Update 1
-* Thu Apr 01 08:21:37 2021
+* Sat May 22 20:20:20 2021
 
 
 
@@ -45,9 +45,9 @@ Q_Q1         $N_0005 $N_0001 $N_0002 Q2N2222
 L_L         $N_0005 $N_0003  470u  
 C_C2         vam $N_0005  10n  
 V_VC         vc 0  
-+SIN 0 15v 50k 0 0 0
++SIN 0 10v 50k 0 0 0
 V_Vm         va 0  
-+SIN 0 15v 5k 0 0 0
++SIN 0 10v 1k 0 0 0
 
 **** RESUMING AM.cir ****
 .INC "AM.als"
@@ -84,7 +84,7 @@ _    _(va=va)
 
 .END
 
-**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+**** 05/22/21 20:21:41 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
 
@@ -124,7 +124,7 @@ _    _(va=va)
            D     .87         
 
 
-**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+**** 05/22/21 20:21:41 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
 
@@ -158,7 +158,7 @@ _    _(va=va)
     TOTAL POWER DISSIPATION   7.10E-02  WATTS
 
 
-**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+**** 05/22/21 20:21:41 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
 
@@ -196,7 +196,7 @@ CBX/CBX2     0.00E+00
 FT/FT2       2.57E+08 
 
 
-**** 04/01/21 08:21:37 *********** Evaluation PSpice (Nov 1999) **************
+**** 05/22/21 20:21:41 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\anjan\Desktop\Semester 4\Principles Of communication\PSPice\AM.sch
 

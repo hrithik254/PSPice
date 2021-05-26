@@ -1,4 +1,4 @@
-*version 9.1 1022497
+*version 9.1 1007526085
 u 332
 R? 7
 C? 5
@@ -28,11 +28,11 @@ connectViaLocalLabels 0
 NoStim4ExtIFPortsWarnings 1
 AutoGenStim4ExtIFPorts 1
 @index
-pageloc 1 0 6464 
+pageloc 1 0 6166 
 @status
-n 0 121:03:01:11:56:02;1617258362 e 
-s 0 121:03:01:08:21:37;1617245497 e 
-c 121:03:01:12:02:24;1617258744
+n 0 121:04:22:20:20:20;1621695020 e 
+s 2832 121:04:22:20:21:41;1621695101 e 
+c 121:04:22:20:20:17;1621695017
 *page 1 0 970 720 iA
 @ports
 port 65 GND_EARTH 400 310 h
@@ -125,24 +125,18 @@ a 1 u 0 0 0 0 hcn 100 FREQ=50k
 a 1 u 0 0 0 0 hcn 100 VOFF=0
 a 0 x 0:13 0 0 0 hln 100 PKGREF=VC
 a 1 xp 9 0 20 10 hcn 100 REFDES=VC
-a 1 u 0 0 0 0 hcn 100 VAMPL=15v
+a 1 u 0 0 0 0 hcn 100 VAMPL=10v
 part 99 VSIN 300 380 h
 a 0 x 0:13 0 0 0 hln 100 PKGREF=Vm
 a 1 xp 9 0 20 10 hcn 100 REFDES=Vm
-a 1 u 0 0 0 0 hcn 100 FREQ=5k
 a 1 u 0 0 0 0 hcn 100 VOFF=0
-a 1 u 0 0 0 0 hcn 100 VAMPL=15v
+a 1 u 0 0 0 0 hcn 100 FREQ=1k
+a 1 u 0 0 0 0 hcn 100 VAMPL=10v
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
 a 1 s 13 0 340 95 hrn 100 PAGECOUNT=1
 a 1 s 13 0 300 95 hrn 100 PAGENO=1
-part 248 nodeMarker 700 270 h
-a 0 a 0 0 4 22 hlb 100 LABEL=8
-part 245 nodeMarker 300 250 h
-a 0 x 0 0 4 22 hlb 100 LABEL=Vc
-part 246 nodeMarker 310 380 h
-a 0 x 0 0 4 22 hlb 100 LABEL=Vm
 @conn
 w 133
 a 0 up 0:33 0 0 0 hln 100 V=
@@ -177,20 +171,6 @@ s 700 440 700 370 44
 s 580 440 630 440 42
 s 630 440 700 440 197
 a 0 up 33 0 665 439 hct 100 V=
-w 101
-a 0 up 0:33 0 0 0 hln 100 V=
-a 0 sr 0 0 0 0 hln 100 LABEL=vc
-s 340 250 300 250 242
-a 0 up 33 0 320 249 hct 100 V=
-a 0 sr 3 0 320 248 hcn 100 LABEL=vc
-s 300 250 300 270 102
-w 64
-a 0 up 0:33 0 0 0 hln 100 V=
-a 0 sr 0 0 0 0 hln 100 LABEL=va
-s 400 380 310 380 247
-a 0 up 33 0 350 379 hct 100 V=
-a 0 sr 3 0 350 378 hcn 100 LABEL=va
-s 310 380 300 380 249
 w 20
 a 0 up 0:33 0 0 0 hln 100 V=
 s 610 260 610 220 23
@@ -202,13 +182,6 @@ a 0 up 33 0 582 280 hlt 100 V=
 s 550 240 550 260 19
 s 580 270 580 260 231
 s 580 270 640 270 32
-w 35
-a 0 up 0:33 0 0 0 hln 100 V=
-a 0 sr 0 0 0 0 hln 100 LABEL=vam
-s 700 330 700 270 36
-a 0 sr 3 0 702 300 hln 100 LABEL=vam
-a 0 up 0:33 0 702 295 hlt 100 V=
-s 700 270 670 270 38
 w 194
 a 0 up 0:33 0 0 0 hln 100 V=
 s 400 190 400 140 25
@@ -222,6 +195,26 @@ s 550 170 550 180 17
 a 0 up 33 0 552 175 hlt 100 V=
 s 300 140 300 150 57
 s 400 140 300 140 55
+w 101
+a 0 up 0:33 0 0 0 hln 100 V=
+a 0 sr 0 0 0 0 hln 100 LABEL=vc
+s 340 250 300 250 242
+a 0 up 33 0 320 249 hct 100 V=
+a 0 sr 3 0 320 248 hcn 100 LABEL=vc
+s 300 250 300 270 102
+w 64
+a 0 up 0:33 0 0 0 hln 100 V=
+a 0 sr 0 0 0 0 hln 100 LABEL=va
+s 400 380 300 380 249
+a 0 sr 3 0 350 378 hcn 100 LABEL=va
+a 0 up 33 0 350 379 hct 100 V=
+w 35
+a 0 up 0:33 0 0 0 hln 100 V=
+a 0 sr 0 0 0 0 hln 100 LABEL=vam
+s 700 330 700 270 36
+a 0 sr 3 0 702 300 hln 100 LABEL=vam
+a 0 up 0:33 0 702 295 hlt 100 V=
+s 700 270 670 270 38
 @junction
 j 300 420
 + s 12
@@ -319,15 +312,6 @@ j 580 170
 j 400 140
 + w 194
 + w 194
-j 310 380
-+ p 246 pin1
-+ w 64
-j 300 250
-+ p 245 pin1
-+ w 101
-j 700 270
-+ p 248 pin1
-+ w 35
 j 610 220
 + p 6 1
 + w 20
